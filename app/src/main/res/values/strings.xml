@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PropertyApp</string>
+    <string name="detail_page_title">more detail</string>
 </resources>
