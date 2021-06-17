@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     // data binding
     private lateinit var binding: ActivityMainBinding
+
     // view model
     //private lateinit var viewModel: MainViewModel
 
@@ -38,13 +39,12 @@ class MainActivity : AppCompatActivity() {
         //viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         val viewModel: MainViewModel by viewModels()
         viewModel.propertiesLiveData.observe(this){
-            //binding.tv.text = it.data[0].description
-            //Glide.with(this).load(it.data[0].agent.avatar.medium.url).into(binding.imageView)
+
             recyclerAdapter.propertiesData = it
             recyclerAdapter.notifyDataSetChanged()
 
         }
-        //viewModel.fetchData()
+
     }
 
 

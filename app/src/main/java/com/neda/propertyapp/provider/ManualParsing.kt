@@ -10,6 +10,8 @@ import java.io.BufferedInputStream
 import java.io.BufferedReader
 import java.net.URL
 
+// read properties info
+// build http connection manually
 class ManualParsing : PropertyAPI {
     override suspend fun getProperties(): PropertiesData {
 

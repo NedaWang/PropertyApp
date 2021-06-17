@@ -33,6 +33,15 @@ android {
     buildFeatures {
         viewBinding true
     }
+    flavorDimensions 'dim1'
+    productFlavors {
+        free {
+            dimension 'dim1'
+        }
+        paid {
+            dimension 'dim1'
+        }
+    }
 }
 
 dependencies {
@@ -69,5 +78,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
 
     implementation("androidx.activity:activity-ktx:1.2.3")
+
 
 }

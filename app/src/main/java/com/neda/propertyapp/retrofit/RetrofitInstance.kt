@@ -3,6 +3,8 @@ package com.neda.propertyapp.retrofit
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// retrofit singleton
+// make network calls
 object RetrofitInstance {
 
     private val builder : Retrofit = Retrofit.Builder()

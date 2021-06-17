@@ -6,8 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="8dp"
     card_view:cardElevation="2dp"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
     card_view:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,6 +59,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.7" />
 
+        <!--
         <ImageView
             android:id="@+id/property_image"
             android:layout_width="0dp"
@@ -66,7 +68,17 @@
             android:src="@drawable/image_not_available"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /> -->
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/property_image"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/image_not_available"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
