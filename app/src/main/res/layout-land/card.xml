@@ -43,14 +43,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9" />
+            app:layout_constraintGuide_percent="0.95" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_vertical"
@@ -68,7 +68,7 @@
             android:src="@drawable/image_not_available"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="parent" /> -->
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/property_image"
@@ -79,7 +79,18 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /> -->
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/property_image"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            app:iss_error_image="@drawable/image_not_available"
+            app:iss_selected_dot="@drawable/default_selected_dot"
+            app:iss_unselected_dot="@drawable/default_unselected_dot"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"

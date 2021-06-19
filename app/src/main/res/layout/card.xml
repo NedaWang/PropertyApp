@@ -68,7 +68,7 @@
             android:src="@drawable/image_not_available"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="parent" /> -->
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/property_image"
@@ -76,6 +76,19 @@
             android:layout_height="300dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/image_not_available"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent"/> -->
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/property_image"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            app:iss_corner_radius="15"
+            app:iss_error_image="@drawable/image_not_available"
+            app:iss_selected_dot="@drawable/default_selected_dot"
+            app:iss_unselected_dot="@drawable/default_unselected_dot"
             app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toTopOf="parent"/>

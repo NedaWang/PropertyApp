@@ -9,6 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.neda.propertyapp.DetailActivity
 import com.neda.propertyapp.R
 import com.neda.propertyapp.model.PropertiesData
@@ -22,7 +25,8 @@ class RecyclerAdaper(val context: Context) : RecyclerView.Adapter<RecyclerAdaper
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         //val property_image: ImageView
-        val property_image: ViewPager
+        //val property_image: ViewPager
+        val property_image: ImageSlider
 
         val profile_image: CircleImageView
         val agent_name: TextView
@@ -59,12 +63,18 @@ class RecyclerAdaper(val context: Context) : RecyclerView.Adapter<RecyclerAdaper
         holder.bath_count.text = property.bathrooms.toString()
         holder.car_park_count.text = property.carspaces.toString()
 
-        val urls : MutableList<String> = mutableListOf()
+        //val urls : MutableList<String> = mutableListOf()
+//        for (image in property.property_images){
+//            urls.add(image.attachment.large.url)
+//        }
+        //var imageAdapter = ImageAdapter(context,urls)
+        //holder.property_image.adapter = imageAdapter
+
+        val imageList = ArrayList<SlideModel>()
         for (image in property.property_images){
-            urls.add(image.attachment.large.url)
+            imageList.add(SlideModel(image.attachment.large.url,ScaleTypes.CENTER_CROP))
         }
-        var imageAdapter = ImageAdapter(context,urls)
-        holder.property_image.adapter = imageAdapter
+        holder.property_image.setImageList(imageList)
 
 //        Glide.with(context).load(propertiesData.data[position].property_images[0].attachment.large.url).fitCenter()
 //            .error(R.drawable.image_not_available).into(holder.property_image)
