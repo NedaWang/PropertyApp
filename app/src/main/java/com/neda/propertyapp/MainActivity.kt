@@ -13,39 +13,43 @@ import com.neda.propertyapp.adapter.RecyclerAdaper
 import com.neda.propertyapp.databinding.ActivityMainBinding
 import com.neda.propertyapp.model.PropertiesData
 import com.neda.propertyapp.vm.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     // data binding
     private lateinit var binding: ActivityMainBinding
 
-    // view model
-    //private lateinit var viewModel: MainViewModel
+    // view model dependency injection
+    private val viewModel: MainViewModel by viewModels()
 
     private lateinit var recyclerAdapter : RecyclerAdaper
-    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //println("viewModel "+viewModel.toString())
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        recyclerAdapter = RecyclerAdaper(this)
-        recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = recyclerAdapter
-
-        //viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        val viewModel: MainViewModel by viewModels()
-        viewModel.propertiesLiveData.observe(this){
-
-            recyclerAdapter.propertiesData = it
-            recyclerAdapter.notifyDataSetChanged()
-
-        }
-
+        setUpRecyclerView()
     }
 
+    fun setUpRecyclerView(){
+
+        recyclerAdapter = RecyclerAdaper(this,PropertiesData(listOf()))
+
+        binding.recyclerView.apply {
+            adapter = recyclerAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
+
+        viewModel.propertiesLiveData.observe(this){
+            recyclerAdapter.setProperties(it)
+        }
+    }
 
 }
