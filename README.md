@@ -2,7 +2,7 @@
 This app shows properties' data. There are two pages. 
 
 
-##Version 1:
+## Version 1:
 ####The main page (MainActivity) lists all properties in cards. 
 1. Orientation change is supported. Since a ViewModel holds the liveData of property data, and the viewModel's lifecycle is longer than an activity's, the data won't be redownloaded because of screen rotation. 
 2. The programming language is Kotlin.
