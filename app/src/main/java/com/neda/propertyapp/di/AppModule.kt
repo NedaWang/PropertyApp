@@ -3,7 +3,7 @@ package com.neda.propertyapp.di
 import android.content.Context
 import com.neda.propertyapp.PropertyApplication
 import com.neda.propertyapp.api.PropertyAPI
-import com.neda.propertyapp.provider.retrofit.RetrofitAPI
+import com.neda.propertyapp.provider.RetrofitAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

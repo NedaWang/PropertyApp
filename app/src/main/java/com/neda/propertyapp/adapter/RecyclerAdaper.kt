@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
-import com.neda.propertyapp.DetailActivity
-import com.neda.propertyapp.R
+import com.neda.propertyapp.*
 import com.neda.propertyapp.databinding.ActivityDetailBinding
 import com.neda.propertyapp.databinding.CardBinding
 import com.neda.propertyapp.model.PropertiesData
@@ -23,7 +25,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 class RecyclerAdaper(val context: Context, var propertiesData: PropertiesData) : RecyclerView.Adapter<RecyclerAdaper.ViewHolder>() {
 
     inner class ViewHolder(val binding: CardBinding) : RecyclerView.ViewHolder(binding.root)
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 //        val view = LayoutInflater.from(parent.context).inflate(R.layout.card, parent, false)
@@ -53,10 +54,17 @@ class RecyclerAdaper(val context: Context, var propertiesData: PropertiesData) :
                 .error(R.drawable.image_not_available).into(profileImage)
         }
         holder.itemView.setOnClickListener(View.OnClickListener {
-            val intent: Intent = Intent(context,DetailActivity::class.java).apply {
-                putExtra("id",property.id)
-            }
-            context.startActivity(intent)
+//            val intent: Intent = Intent(context,DetailActivity::class.java).apply {
+//                putExtra("id",property.id)
+//            }
+//            context.startActivity(intent)
+            val args: String = property.id
+
+            //it.findNavController().navigate(R.id.propertyDetailFragment)
+            // navigation with Safe Args
+            val action = PropertyListFragmentDirections.actionPropertyListToPropertyDetail(args)
+
+            it.findNavController().navigate(action)
         })
     }
 
