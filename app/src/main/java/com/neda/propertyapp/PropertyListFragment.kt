@@ -22,8 +22,6 @@ class PropertyListFragment : Fragment(R.layout.fragment_property_list) {
     private val binding get() = _binding!!
     private lateinit var recyclerAdapter : RecyclerAdaper
 
-    private val propertyDetailFragment: PropertyDetailFragment = PropertyDetailFragment()
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View{
