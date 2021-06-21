@@ -1,4 +1,4 @@
-package com.neda.propertyapp.provider.retrofit
+package com.neda.propertyapp.provider
 
 import com.neda.propertyapp.api.PropertyAPI
 import com.neda.propertyapp.model.PropertiesData

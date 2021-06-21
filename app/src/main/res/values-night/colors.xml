@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cardBackgroundColor">#C95C1A00</color> <!-- FBF8F5 -->
+    <color name="activityBackgroundColor">#8F3E00</color> <!-- E8B4B8 -->
+    <color name="textColor">#FFFFFFFF</color> <!-- FBF8F5 -->
+</resources>

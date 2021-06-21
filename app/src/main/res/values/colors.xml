@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cardBackgroundColor">#FBF8F5</color>
-    <color name="activityBackgroundColor">#FFFFFFFF</color>
+    <color name="cardBackgroundColor">#FDFAF6</color> <!-- FBF8F5 -->
+    <color name="activityBackgroundColor">#FAEFE0</color> <!-- E8B4B8 -->
+    <color name="textColor">#FF000000</color> <!-- FBF8F5 -->
 </resources>
