@@ -38,9 +38,9 @@ class PropertyListFragment : Fragment(R.layout.fragment_property_list) {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-            binding.recyclerView.apply {
-                adapter = recyclerAdapter
-                layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.apply {
+            adapter = recyclerAdapter
+            layoutManager = LinearLayoutManager(context)
 
             viewModel.propertiesLiveData.observe(getViewLifecycleOwner()){
                 recyclerAdapter.setProperties(it)

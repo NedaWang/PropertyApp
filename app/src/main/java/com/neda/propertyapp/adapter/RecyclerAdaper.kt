@@ -58,11 +58,12 @@ class RecyclerAdaper(val context: Context, var propertiesData: PropertiesData) :
 //                putExtra("id",property.id)
 //            }
 //            context.startActivity(intent)
-            val args: String = property.id
+            //val args: String = property.id
+            val args: Int = position
 
             //it.findNavController().navigate(R.id.propertyDetailFragment)
             // navigation with Safe Args
-            val action = PropertyListFragmentDirections.actionPropertyListToPropertyDetail(args)
+            val action = PropertyListFragmentDirections.actionPropertyListToPropertyDetail(args.toString())
 
             it.findNavController().navigate(action)
         })
